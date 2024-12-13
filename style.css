@@ -1,0 +1,381 @@
+:root{
+    --bg:#86553f;
+    --primary:#dbb657;
+    --second:#e45c54;
+    --var:#90a375;
+    --text:#c8c2d0;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color:#1a0800;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+    width: 100%;
+    padding: 0 7%;
+    background: rgba(0,0,0,.3);
+    backdrop-filter: blur(1px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: hsl(0, 0%, 100%);
+    border-bottom: .15rem solid var(--primary);
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    position: fixed;
+}
+.navbar-brand{
+    font-size: 1.75rem;
+    font-weight: bolder;
+    font-style: italic;
+    margin: 1rem 0;
+}
+.navbar-brand span{
+    color: var(--primary);
+}
+.navbar-nav{
+    background-color: transparent;
+}
+.navbar-nav a{
+    margin: 0 .3rem;
+    font-weight:lighter;
+    color: white;
+    transition: all .1s ease-in-out;
+    display: inline-block;
+}
+.navbar-nav a:hover{
+    color: var(--primary);
+}
+.navbar-nav a::after{
+    content: '';
+    border-bottom: 0.15rem solid var(--primary);
+    display: block;
+    transform: scaleX(0);
+    transition: .1s linear;
+}
+.navbar-nav a:hover::after{
+    transform: scaleX(1);
+}
+.navbar-icons{
+    color:white;
+}
+#hambur{
+    background-color: transparent;
+    border: none;
+    fill: white;
+    display: none;
+}
+.nav-brand{
+    display: none;
+}
+
+
+    /* RESPONSIVE */
+    @media(max-width:767px){
+        .navbar-brand{
+            margin: 1.3rem 0;
+        }
+        .navbar-nav{
+            position: absolute;
+            top:100%;
+            right: -100%;
+            background-color: rgba(0, 0, 0, .5);
+            width: 40%;
+            height: 100vh;
+            transition: .2s;
+        }
+        .nav-brand{
+            display: flex;
+            height: 55%;
+            justify-content: center;
+        }
+        .nav-brand div{
+            margin: auto 0 0;
+        }
+        .nav-brand div p{
+            font-size: 1.75rem;
+            font-weight: bolder;
+            font-style: italic;
+        }
+        .nav-brand div p span{
+            color: var(--primary);
+        }
+        .navbar-nav a{
+            display: block;
+            color: white;
+            font-size: 1.5rem;
+            padding: 1rem 1rem;
+            margin: 0;
+            margin-top: 0.15rem;
+            transition:.15s ease-in-out ;
+        }
+        .navbar-nav a:hover{
+            background-color:var(--primary);
+            color: var(--bg);
+        }
+        .navbar-nav a::after{
+            border: none;
+        }
+        .nav-active{
+            right: 0;
+        } 
+        #hambur{
+            display: inline-block;
+        }
+    }
+/* NAVBAR END*/
+
+/* JUMBOTRON */
+#home{
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#home video{
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+#home video source{
+    min-width: 100%;
+    min-height: 100%;
+}
+.home-text{
+    text-align: center;
+    max-width: 75%;
+    color: white;
+    text-shadow: black;
+    margin: auto;
+    position:absolute;
+    display: block;
+} 
+.home-text h1{
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+.home-text p{
+    font-size: 1.1rem;
+    font-weight: 200;
+    max-width: 90%; 
+    margin: 0 auto;
+}
+.btn-primary{
+    background-color: transparent;
+    padding: .5rem 1.3rem;
+    margin-top: 1rem;
+    display: inline-block;
+    color: var(--primary);
+    border-radius: .5rem;
+    font-weight: bold;
+    border: 2px var(--primary) solid;
+    transition: .15s all ease-in-out;
+}
+.btn-primary:hover{
+    background-color: var(--primary);
+    border: 2px var(--bg) solid;
+    color: var(--bg);
+}
+/* JUMBOTRON END*/
+
+/* ABOUT US */
+#about{
+    width:90%;
+    padding: 5rem 0;
+    margin: 0 auto;
+    color: var(--text);
+    text-align: center;
+}
+#about h1{
+    font-size: 2rem;
+}
+.welcome{
+    display: flex;
+}
+.welcome p{
+    width: 50%;
+    margin: 1rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 100;
+}
+.welcome .kiri{
+    text-align: right;
+}
+.welcome .kanan{
+    text-align: left;
+}
+.welcome .kiri strong span{
+    color: var(--primary);
+}
+/* ABOUT US END*/
+
+/* MENU */
+#menu{
+    text-align: center;
+    position: relative;
+}
+.special-menu{
+    padding: 5rem 0;
+    background-color: var(--bg);
+}
+.special-menu h1{
+    margin: 0 auto 2rem;
+    font-size: 2rem;
+    color: var(--text);
+}
+.special-menu h1 span{
+    color: var(--primary);
+}
+.container-card-special{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.special-card{
+    width:25%;
+    background-color: var(--primary);
+    padding: 1.5rem .5rem;
+    border-radius: 2rem;
+    margin: 1rem;
+}
+@media(max-width:767px){
+    .special-card{
+        width:40%;
+    }
+}
+.special-card img{
+    width: 90%;
+    border-radius: 50%;
+    margin-bottom: .5rem;
+    box-shadow: 0px 5px 10px rgba(0,0,0,.7);
+}
+.special-card h3{
+    color: var(--bg);
+    font-size: 1.35rem;
+    margin-bottom: 2rem;
+}
+.special-card .price{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    align-items: center;
+}
+.special-card .price p{
+    color: var(--bg);
+    font-size: 1.1rem;
+}
+.special-card a{
+    color: var(--primary);
+    font-size: 1.1rem;
+    background-color: var(--bg);
+    padding: .3rem 1rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    transition: all .2s ease-in-out;
+}
+.special-card a:hover{
+    background-color: #502615;
+}
+.menu{
+    padding: 3rem 4rem;
+}
+.menu h1{
+    color: var(--text);
+    font-size: 2.5rem;
+    text-align: center;
+}
+.pilih-menu{
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.pilih-menu .menu-btn{ 
+    background-color: transparent;
+    border: var(--primary) 2px solid;
+    color: var(--primary);
+    padding: .5rem 1.7rem;
+    margin: 1rem;
+    border-radius: 2rem;
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+@media(max-width:767px){
+    .pilih-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.pilih-menu .menu-btn:hover{
+    background-color: var(--primary);
+    color: #1a0800;
+}
+.pilih-menu .btn-active{
+    background-color: var(--primary);
+    color: #1a0800;
+}
+.container-makan, .container-minum, .container-camil{
+    width: 100%;
+}
+.card{
+    display: flex;
+    color: white;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--primary);
+    padding: .5rem;
+}
+.card div h3, .card strong{
+    color: var(--primary);
+}
+.d-none{
+    display: none;
+}
+/* MENU END */
+
+/* FOOTER */
+footer{
+    width: 100%;
+    padding: 1rem 0;
+    background-color: var(--primary);
+    bottom: 0;
+}
+/* FOOTER END */
+
+/* MEDIA QUERRY */
+@media (max-width:1279px){
+    html{
+        font-size: 85%;
+    }
+}
+
+@media (max-width:767px){
+    html{
+        font-size: 65%;
+    }
+}
+
+@media (max-width:479px){
+    html{
+        font-size: 55%;
+    }
+}
